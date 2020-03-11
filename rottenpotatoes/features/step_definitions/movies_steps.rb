@@ -23,3 +23,9 @@ Then /I should see all the movies/ do
     step %{I should see "#{movie.title}"}
   end
 end
+
+# step definition for the happy path in similar director search
+Then /^the director of "(.*)" should be "(.*)"/ do |title, director|
+  movie = Movie.where(title: title).first
+  expect(movie.director).to eq(director)
+end

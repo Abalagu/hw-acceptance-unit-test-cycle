@@ -41,6 +41,7 @@ When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
   with_scope(parent) { When "#{step}:", table_or_string }
 end
 
+# the subject is excluded in the first capture group by (?:| )
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
