@@ -1,5 +1,7 @@
--#  This file is app/views/movies/index.html.haml
-%h2 All Movies
+-#  This file is app/views/movies/same_director.html.haml
+-#  Adapted from the index page
+
+%h2 Same Director
 
 = form_tag movies_path, :method => :get, :id => 'ratings_form' do
   = hidden_field_tag "title_sort", true if @title_header
@@ -27,4 +29,4 @@
         %td= movie.director
         %td= link_to "More about #{movie.title}", movie_path(movie)
 
-= link_to 'Add new movie', new_movie_path
+= link_to 'Back to movie list', movies_path
